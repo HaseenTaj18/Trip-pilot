@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TripPilot — Journey Genie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="nav-wrap">
+    <nav class="navbar container">
+      <div class="brand">
+        <span class="logo-ico">✈️</span>
+        <span class="logo-text">Trip<span class="accent">Pilot</span></span>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-target="home">Home</a></li>
+        <li><a href="#destinations" data-target="destinations">Destinations</a></li>
+        <li><a href="#hotels" data-target="hotels">Hotels</a></li>
+        <li><a href="#flights" data-target="flights">Flights</a></li>
+        <li><a href="#activities" data-target="activities">Activities</a></li>
+        <li><a href="#guides" data-target="guides">Guides</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="link-btn sign-in">Sign In</button>
+        <button class="cta-btn">Get Started</button>
+        <button id="menuToggle" class="menu-toggle">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80')">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner container">
+      <h1 class="hero-title">Explore the World</h1>
+      <p class="hero-sub">Discover amazing destinations, book flights & hotels, and plan your perfect adventure</p>
+
+      <div class="search-pill">
+        <input id="universalSearch" placeholder="Where do you want to go?" />
+        <button id="searchBtn">🔍 Search</button>
+      </div>
+
+      <div class="hero-links">
+        <a href="#destinations">Popular Destinations</a>
+        <a href="#hotels">Top Hotels</a>
+        <a href="#flights">Compare Flights</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINATIONS -->
+  <section id="destinations" class="section container">
+    <h2 class="section-title">Explore Destinations</h2>
+    <p class="section-sub">Discover amazing places around the world and start planning your next adventure</p>
+
+    <div class="controls">
+      <div class="filter-group">
+        <select id="destFilter">
+          <option value="all">All countries</option>
+          <option value="France">France</option>
+          <option value="Japan">Japan</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="USA">USA</option>
+          <option value="Greece">Greece</option>
+        </select>
+      </div>
+      <div class="sort-group">
+        <select id="destSort">
+          <option value="popular">Sort: Popular</option>
+          <option value="price-asc">Price ↑</option>
+          <option value="price-desc">Price ↓</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- DEST GRID: images included directly in HTML with data attributes -->
+    <div id="destGrid" class="dest-grid">
+
+      <!-- 1 Paris -->
+      <div class="dest-card" data-country="France" data-price="1200" data-rating="4.8" data-title="Paris">
+        <div class="img-wrap">
+          <img src="https://i.pinimg.com/736x/b8/2e/33/b82e332473712b0f1b56b5b331970d5b.jpg" alt="Paris">
+          <div class="img-overlay"></div>
+          <div class="overlay-title">Paris</div>
+          <div class="rating-badge">★ 4.8</div>
+        </div>
+        <div class="card-content">
+          <p class="desc">The city of love, lights, fashion and timeless beauty.</p>
+          <div class="card-meta">
+            <div><span style="color:#f2b01e;">★</span> 4.8</div>
+            <div class="price">From $1,200</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 Tokyo -->
+      <div class="dest-card" data-country="Japan" data-price="1500" data-rating="4.9" data-title="Tokyo">
+        <div class="img-wrap">
+          <img src="https://i.pinimg.com/1200x/b1/3f/75/b13f753f5b64f66b7601f0de6f76a83f.jpg" alt="Tokyo">
+          <div class="img-overlay"></div>
+          <div class="overlay-title">Tokyo</div>
+          <div class="rating-badge">★ 4.9</div>
+        </div>
+        <div class="card-content">
+          <p class="desc">A futuristic blend of tradition, neon streets and culture.</p>
+          <div class="card-meta">
+            <div><span style="color:#f2b01e;">★</span> 4.9</div>
+            <div class="price">From $1,500</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Bali -->
+      <div class="dest-card" data-country="Indonesia" data-price="800" data-rating="4.7" data-title="Bali">
+        <div class="img-wrap">
+          <img src="https://i.pinimg.com/736x/ca/2c/75/ca2c75c3d84f78b7655b67d0c2548c05.jpg" alt="Bali">
+          <div class="img-overlay"></div>
+          <div class="overlay-title">Bali</div>
+          <div class="rating-badge">★ 4.7</div>
+        </div>
+        <div class="card-content">
+          <p class="desc">Island paradise, temples and beautiful beaches.</p>
+          <div class="card-meta">
+            <div><span style="color:#f2b01e;">★</span> 4.7</div>
+            <div class="price">From $800</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 San Francisco -->
+      <div class="dest-card" data-country="USA" data-price="1400" data-rating="4.6" data-title="San Francisco">
+        <div class="img-wrap">
+          <img src="https://i.pinimg.com/736x/0d/0a/a2/0d0aa2bb25e5291740cfa0d356410205.jpg" alt="San Francisco">
+          <div class="img-overlay"></div>
+          <div class="overlay-title">San Francisco</div>
+          <div class="rating-badge">★ 4.6</div>
+        </div>
+        <div class="card-content">
+          <p class="desc">Iconic bridges, steep streets and vibrant neighborhoods.</p>
+          <div class="card-meta">
+            <div><span style="color:#f2b01e;">★</span> 4.6</div>
+            <div class="price">From $1,400</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 Santorini -->
+      <div class="dest-card" data-country="Greece" data-price="1100" data-rating="4.5" data-title="Santorini">
+        <div class="img-wrap">
+          <img src="https://i.pinimg.com/1200x/1a/44/b7/1a44b7bae70cda361e43010af65a10cb.jpg" alt="Santorini">
+          <div class="img-overlay"></div>
+          <div class="overlay-title">Santorini</div>
+          <div class="rating-badge">★ 4.5</div>
+        </div>
+        <div class="card-content">
+          <p class="desc">Whitewashed houses, blue domes and endless Aegean views.</p>
+          <div class="card-meta">
+            <div><span style="color:#f2b01e;">★</span> 4.5</div>
+            <div class="price">From $1,100</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Rome -->
+      <div class="dest-card" data-country="Italy" data-price="1000" data-rating="4.4" data-title="Rome">
+        <div class="img-wrap">
+          <img src="https://i.pinimg.com/1200x/79/f1/da/79f1dafa120a2758c48efd76cc31a4ad.jpg" alt="Rome">
+          <div class="img-overlay"></div>
+          <div class="overlay-title">Rome</div>
+          <div class="rating-badge">★ 4.4</div>
+        </div>
+        <div class="card-content">
+          <p class="desc">Ancient monuments, cobblestone streets and delicious food.</p>
+          <div class="card-meta">
+            <div><span style="color:#f2b01e;">★</span> 4.4</div>
+            <div class="price">From $1,000</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOTELS -->
+  <section id="hotels" class="section container">
+    <h2 class="section-title">Find Your Perfect Stay</h2>
+    <p class="section-sub">Book from thousands of hotels worldwide with the best prices guaranteed</p>
+
+    <div id="hotelGrid" class="grid"></div>
+  </section>
+
+  <!-- FLIGHTS -->
+  <section id="flights" class="section container">
+    <h2 class="section-title">Book Your Flight</h2>
+    <p class="section-sub">Compare prices and find the best deals on flights worldwide</p>
+
+    <div id="flightList" class="flight-list"></div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section id="activities" class="section container">
+    <h2 class="section-title">Discover Activities</h2>
+    <p class="section-sub">Unique experiences and unforgettable adventures at every destination</p>
+
+    <div id="activityGrid" class="grid"></div>
+  </section>
+
+  <!-- GUIDES -->
+  <section id="guides" class="section container">
+    <h2 class="section-title">Travel Guides & Tips</h2>
+    <p class="section-sub">Expert advice and insider tips to help you plan the perfect trip</p>
+
+    <div class="guide-grid grid"></div>
+  </section>
+
+  <!-- BOOKING MODAL -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© <strong>TravelHelper</strong> — plan your next trip</div>
+      <div class="footer-links">
+        <a href="#guides">Guides</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

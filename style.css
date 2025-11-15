@@ -1,0 +1,106 @@
+/* ---------- RESET & BASE ---------- */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)){box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:Inter, "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#1f2937;background:#f5f7fa}
+
+/* ---------- CONTAINER ---------- */
+.container{width:min(1140px,94%);margin:0 auto;padding:0 12px}
+
+/* ---------- NAVBAR ---------- */
+.nav-wrap{position:sticky;top:0;z-index:999}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:18px 6px;background:#fff;border-bottom:1px solid rgba(15,23,42,0.04);box-shadow:0 3px 12px rgba(11,15,20,0.03)}
+.brand{display:flex;align-items:center;gap:10px}
+.logo-ico{font-size:20px}
+.logo-text{font-weight:700;color:#0f1724}
+.logo-text .accent{color:#06b6d4;margin-left:2px}
+.nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0;align-items:center}
+.nav-links a{color:#374151;font-weight:600;opacity:.9}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.link-btn{background:transparent;border:0;padding:8px 12px;cursor:pointer}
+.cta-btn{background:#03a9f4;color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(3,169,244,0.12)}
+.menu-toggle{display:none;background:transparent;border:0;font-size:22px}
+
+/* ---------- HERO ---------- */
+.hero{min-height:78vh;background-size:cover;background-position:center;position:relative;display:flex;align-items:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(3,16,24,0.35), rgba(3,16,24,0.35))}
+.hero-inner{position:relative;text-align:center;color:#fff;padding:90px 0}
+.hero-title{font-size:64px;margin:0 0 14px;font-weight:800;letter-spacing:-1px;text-shadow:0 10px 30px rgba(0,0,0,0.45)}
+.hero-sub{font-size:20px;margin:0 0 28px}
+.search-pill{display:inline-flex;background:rgba(255,255,255,0.98);border-radius:999px;padding:6px;align-items:center;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.2)}
+.search-pill input{border:0;padding:14px 18px;width:420px;font-size:16px;border-radius:999px;outline:none}
+.search-pill button{background:#05a0e6;color:#fff;border:0;padding:12px 22px;border-radius:999px;margin-left:8px;cursor:pointer;font-weight:700}
+.hero-links{margin-top:18px;display:flex;gap:16px;justify-content:center}
+.hero-links a{color:rgba(255,255,255,0.9);text-decoration:none;background:rgba(255,255,255,0.06);padding:8px 14px;border-radius:8px}
+
+/* ---------- SECTION TITLES ---------- */
+.section{padding:72px 0}
+.section-title{text-align:center;font-size:38px;color:#0b6b90;margin-bottom:6px;font-weight:800}
+.section-sub{text-align:center;color:#55636d;margin-bottom:28px}
+
+/* ---------- CONTROLS ---------- */
+.controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:12px}
+.controls select{padding:10px 12px;border-radius:8px;border:1px solid #e6eef2;background:#fff}
+
+/* ---------- DESTINATIONS - HTML-based cards ---------- */
+.dest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.dest-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(8,15,30,0.06);display:flex;flex-direction:column}
+.img-wrap{position:relative;width:100%;height:220px;overflow:hidden;background:#e9eef2}
+.img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
+.dest-card:hover .img-wrap img{transform:scale(1.04)}
+.img-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.00) 35%, rgba(0,0,0,0.28) 65%, rgba(0,0,0,0.45) 100%);pointer-events:none}
+.overlay-title{position:absolute;left:16px;bottom:14px;color:#fff;font-size:20px;font-weight:800;text-shadow:0 6px 18px rgba(0,0,0,0.6);z-index:3;line-height:1}
+.rating-badge{position:absolute;right:12px;top:12px;background:rgba(255,255,255,0.95);padding:6px 10px;border-radius:12px;font-weight:700;color:#0b6b90;z-index:4;box-shadow:0 6px 18px rgba(2,8,23,0.12);display:flex;align-items:center;gap:6px}
+.card-content{padding:18px 20px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.card-content .desc{margin:6px 0 14px 0;color:#52606a;line-height:1.6}
+.card-meta{display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid #f3f6f8;margin-top:auto}
+.price{color:#038be6;font-weight:800}
+
+/* ---------- HOTEL, FLIGHT, ACTIVITY, GUIDES - basic card styles ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.card{background:#fff;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:220px;object-fit:cover}
+.hotel-img{height:210px;object-fit:cover}
+.hotel-card .hotel-body{padding:16px}
+.hotel-price{color:#04a5e6;font-weight:800;font-size:20px}
+
+/* Flight list style */
+.flight-list{display:flex;flex-direction:column;gap:16px}
+.flight-card{background:#fff;border-radius:12px;padding:20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 8px 20px rgba(10,20,30,0.04)}
+.flight-left{display:flex;gap:14px;align-items:center}
+.flight-left .ico{background:#e6f7ff;padding:14px;border-radius:12px;color:#03a9f4;font-weight:800}
+.flight-times{min-width:200px}
+.flight-times .time{font-size:26px;font-weight:800}
+.flight-mid{flex:1;text-align:center;color:#78858a}
+.flight-right{text-align:right}
+.select-flight{background:#03a9f4;color:#fff;padding:10px 18px;border-radius:10px;border:0;cursor:pointer}
+
+/* Activities */
+.activity-card img{height:220px;object-fit:cover}
+.activity-body{padding:16px}
+
+/* Guides */
+.guide-grid .card{display:flex;flex-direction:column}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(2,6,23,0.45);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal.hidden{display:none}
+.modal-card{background:#fff;border-radius:12px;padding:18px;max-width:680px;width:100%;position:relative;overflow:hidden}
+.modal-card img{width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+.modal-close{position:absolute;right:12px;top:12px;border:0;background:transparent;font-size:22px;cursor:pointer}
+
+/* Footer */
+.footer{padding:22px 0;background:#fff;border-top:1px solid rgba(15,23,42,0.04);margin-top:30px}
+.footer .container{display:flex;justify-content:space-between;align-items:center}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero-title{font-size:44px}
+  .search-pill input{width:240px}
+}
+@media (max-width:780px){
+  .nav-links{display:none;position:absolute;right:12px;top:68px;background:#fff;padding:18px;border-radius:8px;box-shadow:0 8px 26px rgba(2,8,23,0.12)}
+  .menu-toggle{display:block}
+  .controls{flex-direction:column;align-items:stretch}
+  .grid{grid-template-columns:1fr}
+  .hero-inner{padding:40px 0}
+}
